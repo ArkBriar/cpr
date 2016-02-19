@@ -41,5 +41,9 @@ void Cookies::AddCookie(const std::pair<std::string, std::string>& cookie) {
     map_.insert(cookie);
 }
 
+void Cookies::DelCookie(const std::string key) {
+    map_.erase(key);
+}
+
 } // namespace cpr
 

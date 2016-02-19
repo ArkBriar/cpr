@@ -21,6 +21,8 @@ class Cookies {
     void AddCookie(const std::map<std::string, std::string>& cookies);
     void AddCookie(const std::pair<std::string, std::string>& cookie);
 
+    void DelCookie(const std::string key);
+
   private:
     std::map<std::string, std::string> map_;
 };
