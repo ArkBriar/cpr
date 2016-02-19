@@ -17,6 +17,10 @@ class Cookies {
     std::string& operator[](const std::string& key);
     std::string GetEncoded() const;
 
+    void AddCookie(const Cookies& cookies);
+    void AddCookie(const std::map<std::string, std::string>& cookies);
+    void AddCookie(const std::pair<std::string, std::string>& cookie);
+
   private:
     std::map<std::string, std::string> map_;
 };

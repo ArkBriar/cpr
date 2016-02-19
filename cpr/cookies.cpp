@@ -27,4 +27,19 @@ std::string& Cookies::operator[](const std::string& key) {
     return map_[key];
 }
 
+void Cookies::AddCookie(const Cookies& cookies) {
+    AddCookie(cookies.map_);
+}
+
+void Cookies::AddCookie(const std::map<std::string, std::string>& cookies) {
+    for (auto i : cookies) {
+        AddCookie(i);
+    }
+}
+
+void Cookies::AddCookie(const std::pair<std::string, std::string>& cookie) {
+    map_.insert(cookie);
+}
+
 } // namespace cpr
+
