@@ -236,7 +236,7 @@ void Session::Impl::SetCookies(const Cookies& cookies) {
     auto curl = curl_->handle;
     if (curl) {
         curl_easy_setopt(curl, CURLOPT_COOKIELIST, "ALL");
-        curl_easy_setopt(curl, CURLOPT_COOKIE, cookies.GetEncoded().data());
+        curl_easy_setopt(curl, CURLOPT_COOKIE, cookies.GetPlain().data());
     }
 }
 

@@ -23,6 +23,14 @@ std::string Cookies::GetEncoded() const {
     return stream.str();
 }
 
+std::string Cookies::GetPlain() const {
+    std::stringstream stream;
+    for (const auto& item : map_) {
+        stream << item.first << "=" << item.second << "; ";
+    }
+    return stream.str();
+}
+
 std::string& Cookies::operator[](const std::string& key) {
     return map_[key];
 }
